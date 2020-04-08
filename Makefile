@@ -1,5 +1,8 @@
-up:
-	docker-compose up
+sidekiq:
+	docker-compose up redis console worker
+
+irb:
+	docker-compose run irb
 
 down:
 	docker-compose down
