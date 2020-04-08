@@ -1,6 +1,6 @@
 # Sidekiq sandbox
 
-## start redis & web console
+## start sidekiq & web console
 
 ```sh
 make up
