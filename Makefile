@@ -11,4 +11,4 @@ clean:
 	@make down
 	docker-compose rm
 	docker volume rm sidekiq_sandbox_redis-data
-	docker image rm sidekiq_sandbox_console
+	docker image rm sidekiq_sandbox_console sidekiq_sandbox_worker sidekiq_sandbox_irb
