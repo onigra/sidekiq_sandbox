@@ -10,7 +10,6 @@ end
 
 class TestWorker
   include Sidekiq::Worker
-  sidekiq_options queue: :sample
 
   def perform
     puts "aaaaaaaaaaaaaa"
