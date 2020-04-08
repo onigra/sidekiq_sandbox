@@ -10,15 +10,23 @@ services:
 
   console:
     build:
-      context: ./console
+      context: .
       dockerfile: Dockerfile
-    environment:
-      RAILS_ENV: development
     ports:
       - 59292:9292
     command: rackup console/config.ru --host 0.0.0.0
     volumes:
       - ./console:/console
+    depends_on:
+      - redis
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sidekiq -r ./worker/worker.rb -C ./worker/sidekiq.yml
+    volumes:
+      - ./worker:/worker
     depends_on:
       - redis
 
