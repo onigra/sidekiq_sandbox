@@ -1,21 +1,32 @@
+# Sidekiq sandbox
+
 ## start redis & web console
 
 ```sh
-docker-compose up
+make up
 ```
 
-## start sidekiq
+## start irb
 
 ```sh
-gem install sidekiq
-sidekiq -r ./worker/worker.rb -C ./worker/sidekiq.yml
+make irb
 ```
 
 ## enqueue
 
-
 ```rb
-# irb
-require './worker/worker.rb'
+# make irb
 TestWorker.perform_async
+```
+
+## down
+
+```sh
+make down
+```
+
+## cleanup project resources
+
+```sh
+make clean
 ```
