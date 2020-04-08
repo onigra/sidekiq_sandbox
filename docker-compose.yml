@@ -16,6 +16,9 @@ services:
       RAILS_ENV: development
     ports:
       - 59292:9292
+    command: rackup console/config.ru --host 0.0.0.0
+    volumes:
+      - ./console:/console
     depends_on:
       - redis
 
