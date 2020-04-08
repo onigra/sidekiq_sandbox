@@ -1,4 +1,4 @@
-sidekiq:
+up:
 	docker-compose up redis console worker
 
 irb:
