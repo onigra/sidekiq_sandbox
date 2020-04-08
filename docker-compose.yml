@@ -37,7 +37,7 @@ services:
     command: irb
     volumes:
       - ./worker:/worker
-      - ./worker/.irbrc:/.irbrc
+      - ./.irbrc:/.irbrc
 
 volumes:
   redis-data:
