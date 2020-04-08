@@ -1,3 +1,5 @@
+PROJECT_NAME := sidekiq_sandbox
+
 up:
 	docker-compose up redis console worker
 
@@ -10,5 +12,5 @@ down:
 clean:
 	@make down
 	docker-compose rm
-	docker volume rm sidekiq_sandbox_redis-data
-	docker image rm sidekiq_sandbox_console sidekiq_sandbox_worker sidekiq_sandbox_irb
+	docker volume rm $(PROJECT_NAME)_redis-data
+	docker image rm $(PROJECT_NAME)_console $(PROJECT_NAME)_worker $(PROJECT_NAME)_irb
